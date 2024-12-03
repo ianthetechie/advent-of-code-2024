@@ -56,7 +56,14 @@ fn part2(input: &str) -> usize {
 }
 
 fn main() {
-    println!("P1 - test: {} full: {}", part1(TEST_INPUT), part1(FULL_INPUT));
-    println!("P2 - test: {} full: {}", part2(TEST_INPUT), part2(FULL_INPUT));
+    println!(
+        "P1 - test: {} full: {}",
+        part1(TEST_INPUT),
+        part1(FULL_INPUT)
+    );
+    println!(
+        "P2 - test: {} full: {}",
+        part2(TEST_INPUT),
+        part2(FULL_INPUT)
+    );
 }
-
