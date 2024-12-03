@@ -10,7 +10,7 @@ fn is_report_safe(report: Vec<isize>) -> bool {
     let mut last = report.next().unwrap();
     for item in report {
         let diff = (last - item).abs();
-        if diff < 1 || diff > 3 {
+        if !(1..=3).contains(&diff) {
             return false;
         }
         last = item;
