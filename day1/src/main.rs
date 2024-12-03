@@ -1,9 +1,10 @@
 use std::collections::HashMap;
 
-const INPUT: &str = include_str!("input.txt");
+const TEST_INPUT: &str = include_str!("test.txt");
+const FULL_INPUT: &str = include_str!("full.txt");
 
-fn part1() -> isize {
-    let (mut a, mut b) = INPUT
+fn part1(input: &str) -> isize {
+    let (mut a, mut b) = input
         .lines()
         .map(|line| {
             let mut segments = line.split_whitespace();
@@ -20,8 +21,8 @@ fn part1() -> isize {
     a.iter().zip(b.iter()).map(|(a, b)| (a - b).abs()).sum()
 }
 
-fn part2() -> isize {
-    let (a, b) = INPUT
+fn part2(input: &str) -> isize {
+    let (a, b) = input
         .lines()
         .map(|line| {
             let mut segments = line.split_whitespace();
@@ -44,6 +45,6 @@ fn part2() -> isize {
 }
 
 fn main() {
-    println!("{}", part1());
-    println!("{}", part2());
+    println!("P1 - test: {} full: {}", part1(TEST_INPUT), part1(FULL_INPUT));
+    println!("P2 - test: {} full: {}", part2(TEST_INPUT), part2(FULL_INPUT));
 }

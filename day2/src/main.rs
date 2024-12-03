@@ -1,4 +1,5 @@
-const INPUT: &str = include_str!("input.txt");
+const TEST_INPUT: &str = include_str!("test.txt");
+const FULL_INPUT: &str = include_str!("full.txt");
 
 fn is_report_safe(report: Vec<isize>) -> bool {
     if !report.is_sorted() && !report.iter().rev().is_sorted() {
@@ -18,8 +19,8 @@ fn is_report_safe(report: Vec<isize>) -> bool {
     true
 }
 
-fn part1() -> usize {
-    INPUT
+fn part1(input: &str) -> usize {
+    input
         .lines()
         .filter(|line| {
             let report: Vec<_> = line
@@ -32,8 +33,8 @@ fn part1() -> usize {
         .count()
 }
 
-fn part2() -> usize {
-    INPUT
+fn part2(input: &str) -> usize {
+    input
         .lines()
         .filter(|line| {
             let report: Vec<_> = line
@@ -55,6 +56,7 @@ fn part2() -> usize {
 }
 
 fn main() {
-    println!("{}", part1());
-    println!("{}", part2());
+    println!("P1 - test: {} full: {}", part1(TEST_INPUT), part1(FULL_INPUT));
+    println!("P2 - test: {} full: {}", part2(TEST_INPUT), part2(FULL_INPUT));
 }
+
