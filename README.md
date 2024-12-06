@@ -10,3 +10,6 @@ somehow, I've never done it in Rust (even though I've been writing Rust professi
 So this year I'm fixing that.
 
 🦀
+
+NOTE: It has come to my attention that the AoC organizers don't want us to distribute problem data,
+so I've removed those from the repository.
