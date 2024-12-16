@@ -12,9 +12,7 @@ fn mul(cap: Captures) -> isize {
 fn part1(input: &str) -> isize {
     let re = Regex::new(r"mul\((\d{1,3}),(\d{1,3})\)").expect("Invalid regex");
 
-    re.captures_iter(input)
-        .map(mul)
-        .sum()
+    re.captures_iter(input).map(mul).sum()
 }
 
 fn part2(input: &str) -> isize {
@@ -29,7 +27,7 @@ fn part2(input: &str) -> isize {
             } else if &cap[0] == "don't()" {
                 *mul_enabled = false;
             } else if *mul_enabled {
-                return Some(mul(cap))
+                return Some(mul(cap));
             }
 
             // No op; but summing with zero is identity ;)
